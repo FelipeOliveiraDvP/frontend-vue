@@ -77,14 +77,14 @@ export default {
       this.$refs.form.validate();
       if (this.$refs.form.value) {
         console.log({
-            nomeFantasia: this.nomeFantasia,
-            razaoSocial: this.razaoSocial,
-            cnpj: this.cnpj,
-            email: this.email,
-            telefone: this.telefone,
+          nomeFantasia: this.nomeFantasia,
+          razaoSocial: this.razaoSocial,
+          cnpj: this.cnpj,
+          email: this.email,
+          telefone: this.telefone,
         });
         this.$refs.form.reset();
-        this.$notification.success('Cliente cadastrado com sucesso!')
+        this.$notification.success("Cliente cadastrado com sucesso!");
       }
     },
   },
