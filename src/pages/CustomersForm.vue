@@ -24,6 +24,7 @@
             <v-text-field
               v-model="cnpj"
               :rules="cnpjRules"
+              v-mask="'##.###.###/####-##'"
               label="CNPJ"
               required
             ></v-text-field>
@@ -39,13 +40,14 @@
           <v-col cols="12" md="6">
             <v-text-field
               v-model="telefone"
+              v-mask="'(##) ##### ####'"
               :rules="telefoneRules"
               label="Telefone para contato"
               required
             ></v-text-field>
           </v-col>
         </v-row>
-        <v-btn color="primary" @click="handleForm"> Cadatrar </v-btn>
+        <v-btn color="primary" @click="handleForm"> Cadastrar </v-btn>
       </v-container>
     </v-form>
   </div>
