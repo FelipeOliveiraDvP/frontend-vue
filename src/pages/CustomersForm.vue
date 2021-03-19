@@ -54,6 +54,9 @@
 </template>
 
 <script>
+import axios from "axios";
+import moment from "moment";
+
 export default {
   name: "CustomersForm",
   data: () => ({
@@ -76,15 +79,24 @@ export default {
     handleForm() {
       this.$refs.form.validate();
       if (this.$refs.form.value) {
-        console.log({
+        const customer = {
           nomeFantasia: this.nomeFantasia,
           razaoSocial: this.razaoSocial,
           cnpj: this.cnpj,
           email: this.email,
           telefone: this.telefone,
-        });
-        this.$refs.form.reset();
-        this.$notification.success("Cliente cadastrado com sucesso!");
+          dataCadastro: moment().format("YYYY-MM-DD"),
+        };
+
+        axios
+          .post("https://localhost:5001/api/customers/", customer)
+          .then(() => {
+            this.$refs.form.reset();
+            this.$notification.success("Cliente cadastrado com sucesso!");
+          })
+          .catch(() => {
+            this.$notification.error("Ocorreu um erro ao cadastrar o cliente");
+          });
       }
     },
   },

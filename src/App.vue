@@ -37,8 +37,6 @@
 
     <v-app-bar app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-app-bar-title>Pontual App</v-app-bar-title>
     </v-app-bar>
 
     <v-main>
@@ -47,8 +45,8 @@
       </v-container>
     </v-main>
 
-    <v-footer app>
-      <p>Footer</p>
+    <v-footer class="footer" app>
+      <p>Desenvolvido por Felipe de Oliveira</p>
     </v-footer>
   </v-app>
 </template>
@@ -65,4 +63,7 @@ export default {
 </script>
 
 <style>
+.footer {
+  justify-content: center;   
+}
 </style>
